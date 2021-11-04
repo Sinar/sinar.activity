@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="sinar.activity">
+
+  -*- extra stuff goes here -*-
+
+  <browser:page
+    name="activity-view"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".activity_view.ActivityView"
+    template="activity_view.pt"
+    permission="zope2.View"
+    />
+
+
+</configure>
