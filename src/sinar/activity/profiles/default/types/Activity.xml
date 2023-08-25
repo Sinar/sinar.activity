@@ -7,10 +7,10 @@
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">Activity</property>
+      name="title">Activity (Event)</property>
   <property
       i18n:translate=""
-      name="description">Activity event such as a workshop, meeting or conference</property>
+      name="description">Project activity event such as a workshop, meeting or conference</property>
 
   <property name="allow_discussion">False</property>
   <property name="factory">Activity</property>
