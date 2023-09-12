@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="sinar.activity.AddProjectActivity"
+        title="sinar.activity: Add ProjectActivity"
+    />
+
+
+    <permission
         id="sinar.activity.AddActivity"
         title="sinar.activity: Add Activity"
     />
