@@ -1,0 +1,13 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="sinar.activity">
+
+    <!-- -*- extra stuff goes here -*- -->
+
+    <utility
+        component=".activity_types.ActivityTypesFactory"
+        name="sinar.activity.ActivityTypes"
+    />
+
+
+</configure>
