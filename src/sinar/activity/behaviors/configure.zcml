@@ -10,6 +10,16 @@
     <!-- -*- extra stuff goes here -*- -->
 
     <plone:behavior
+        name="sinar.activity.activity_status"
+        title="ActivityStatus"
+        description="Implementation status of Project Activity"
+        provides=".activity_status.IActivityStatus"
+        factory=".activity_status.ActivityStatus"
+        marker=".activity_status.IActivityStatusMarker"
+        />
+
+
+    <plone:behavior
         name="sinar.activity.activity_types"
         title="ActivityTypes"
         description="Activity Types"
