@@ -12,6 +12,16 @@
     <plone:behavior
         name="sinar.activity.activity_status"
         title="ActivityStatus"
+        description="IATI Activity Status"
+        provides=".activity_status.IActivityStatus"
+        factory=".activity_status.ActivityStatus"
+        marker=".activity_status.IActivityStatusMarker"
+        />
+
+
+    <plone:behavior
+        name="sinar.activity.activity_status"
+        title="ActivityStatus"
         description="Implementation status of Project Activity"
         provides=".activity_status.IActivityStatus"
         factory=".activity_status.ActivityStatus"
