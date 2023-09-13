@@ -7,7 +7,7 @@
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">Activity (Event)</property>
+      name="title">Project Event</property>
   <property
       i18n:translate=""
       name="description">Project activity event such as a workshop, meeting or conference</property>
@@ -57,6 +57,7 @@
     <element value="plone.app.event.dx.behaviors.IEventContact"/>
     <element value="sinar.organization.partners"/>
     <element value="sinar.project.project"/>
+    <element value="sinar.activity.activity_types"/>
     <element value="plone.tableofcontents"/>
     <!--<element value="plone.versioning" />-->
     <!--<element value="plone.translatable" />-->

@@ -7,7 +7,7 @@
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">ProjectActivity</property>
+      name="title">Project Activity</property>
   <property
       i18n:translate=""
       name="description">Project Activity</property>
@@ -47,6 +47,7 @@
     <element value="plone.publication"/>
     <element value="plone.categorization"/>
     <element value="plone.locking" />
+    <element value="sinar.activity.activity_types"/>
     <!--<element value="plone.leadimage"/>-->
     <!--<element value="plone.relateditems"/>-->
     <!--<element value="plone.richtext"/>-->

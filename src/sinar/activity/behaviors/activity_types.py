@@ -3,6 +3,8 @@
 from sinar.activity import _
 from plone import schema
 from plone.autoform.interfaces import IFormFieldProvider
+from plone.autoform import directives
+from plone.app.z3cform.widget import RelatedItemsFieldWidget, SelectFieldWidget
 from plone.supermodel import model
 from Products.CMFPlone.utils import safe_hasattr
 from zope.component import adapter
@@ -20,10 +22,15 @@ class IActivityTypes(model.Schema):
     """
     """
 
-    project = schema.TextLine(
-        title=_(u'Project'),
-        description=_(u'Give in a project name'),
+    directives.widget(activity_types=SelectFieldWidget)
+    activity_types = schema.List(
+        title=_('Activity Type'),
+        description=_('''Project activity types that best describes this
+                      activity'''),
         required=False,
+        value_type=schema.Choice(
+            vocabulary="sinar.activity.ActivityTypes"
+        ),
     )
 
 
@@ -34,11 +41,11 @@ class ActivityTypes(object):
         self.context = context
 
     @property
-    def project(self):
-        if safe_hasattr(self.context, 'project'):
-            return self.context.project
+    def activity_types(self):
+        if safe_hasattr(self.context, 'activity_types'):
+            return self.context.activity_types
         return None
 
-    @project.setter
-    def project(self, value):
-        self.context.project = value
+    @activity_types.setter
+    def activity_types(self, value):
+        self.context.activity_types = value

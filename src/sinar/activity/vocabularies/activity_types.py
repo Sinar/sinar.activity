@@ -25,8 +25,16 @@ class ActivityTypes(object):
         # Just an example list of content for our vocabulary,
         # this can be any static or dynamic data, a catalog result for example.
         items = [
-            VocabItem(u'sony-a7r-iii', _(u'Sony Aplha 7R III')),
-            VocabItem(u'canon-5d-iv', _(u'Canon 5D IV')),
+            VocabItem('advocacy', _('Advocacy')),
+            VocabItem('capacity_building',
+                    _('Capacity building and awareness raising ')),
+            VocabItem('comms', _('Communications and campaigns')),
+            VocabItem('crisis_suppport',
+                    _('Crisis support and legal defense')),
+            VocabItem('monitoring', _('Monitoring and documentation')),
+            VocabItem('research', _('Research and knowledge generation')),
+            VocabItem('mobilisation', _('Resource mobilisation')),
+            VocabItem('solidarity', _('Solidarity Actions')),
         ]
 
         # Fix context if you are using the vocabulary in DataGridField.
