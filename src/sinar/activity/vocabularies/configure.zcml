@@ -5,6 +5,12 @@
     <!-- -*- extra stuff goes here -*- -->
 
     <utility
+        component=".activity_status.ActivityStatusFactory"
+        name="sinar.activity.ActivityStatus"
+    />
+
+
+    <utility
         component=".activity_types.ActivityTypesFactory"
         name="sinar.activity.ActivityTypes"
     />
