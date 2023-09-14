@@ -3,5 +3,9 @@
   <index name="activity_types" meta_type="KeywordIndex">
     <indexed_attr value="activity_types"/>
   </index>
-  <column value="activity_types"/>
+  <column value="activity_status"/>
+  <index name="activity_status" meta_type="FieldIndex">
+    <indexed_attr value="activity_status"/>
+  </index>
+  <column value="activity_status"/>
 </object>

@@ -31,7 +31,6 @@
   <property name="model_file"></property>
   <property name="model_source"></property>
   <property name="schema">sinar.activity.content.activity.IActivity</property>
-
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
     <!-- Details about all standard behaviors following can be read at
@@ -58,6 +57,7 @@
     <element value="sinar.organization.partners"/>
     <element value="sinar.project.project"/>
     <element value="sinar.activity.activity_types"/>
+    <element value="sinar.activity.activity_status"/>
     <element value="plone.tableofcontents"/>
     <!--<element value="plone.versioning" />-->
     <!--<element value="plone.translatable" />-->

@@ -48,6 +48,7 @@
     <element value="plone.categorization"/>
     <element value="plone.locking" />
     <element value="sinar.activity.activity_types"/>
+    <element value="sinar.activity.activity_status"/>
     <!--<element value="plone.leadimage"/>-->
     <!--<element value="plone.relateditems"/>-->
     <!--<element value="plone.richtext"/>-->

@@ -3,6 +3,8 @@
 from sinar.activity import _
 from plone import schema
 from plone.autoform.interfaces import IFormFieldProvider
+from plone.autoform import directives
+from plone.app.z3cform.widget import RelatedItemsFieldWidget, SelectFieldWidget
 from plone.supermodel import model
 from Products.CMFPlone.utils import safe_hasattr
 from zope.component import adapter
@@ -20,9 +22,11 @@ class IActivityStatus(model.Schema):
     """
     """
 
-    project = schema.TextLine(
-        title=_(u'Project'),
-        description=_(u'Give in a project name'),
+    directives.widget(activity_status=SelectFieldWidget)
+    activity_status = schema.Choice(
+        title=_('Activity Status'),
+        description=_('Current activity implementation status'),
+        vocabulary="sinar.activity.ActivityStatus",
         required=False,
     )
 
@@ -34,11 +38,11 @@ class ActivityStatus(object):
         self.context = context
 
     @property
-    def project(self):
-        if safe_hasattr(self.context, 'project'):
-            return self.context.project
+    def activity_status(self):
+        if safe_hasattr(self.context, 'activity_status'):
+            return self.context.activity_status
         return None
 
-    @project.setter
-    def project(self, value):
-        self.context.project = value
+    @activity_status.setter
+    def activity_status(self, value):
+        self.context.activity_status = value
