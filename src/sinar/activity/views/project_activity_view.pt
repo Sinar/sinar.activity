@@ -9,13 +9,6 @@
   <metal:custom_title fill-slot="content-title">
     <h1 tal:replace="structure context/@@title" />
 
-    <!-- @@title view template: -->
-    <!--
-    <h1 tal:define="title context/Title" tal:condition="title" tal:content="title">
-      Title or id
-    </h1>
-    -->
-
   </metal:custom_title>
 
   <metal:custom_description fill-slot="content-description">
@@ -25,9 +18,28 @@
   <metal:content-core fill-slot="content-core">
   <metal:block define-macro="content-core">
 
-    <h2>Main content</h2>
-    <!--<div tal:replace="view/my_custom_view_method" />-->
-    <!--<div tal:replace="context/my_custom_field" />-->
+     <dl><dt>Type</dt>
+         <dd tal:repeat="type view/activity_types_titles | nothing">
+             <span tal:content="type" />
+         </dd>
+         <dt>Status</dt>
+         <dd tal:content="view/activity_status_title | nothing"></dd>
+    </dl>
+
+    <table class="listing" summary="Project Summary">
+        <tr class="odd">
+            <td>Start Date</td>
+            <td tal:content="context/activity_start_date | nothing"></td>
+        </tr>
+        <tr class="even">
+            <td>End Date</td>
+            <td tal:content="context/activity_end_date | nothing"></td>
+        </tr>
+
+    </table>
+
+    <h2>Project Activity Details</h2>
+    <div tal:replace="structure context/text/output | nothing" />
 
   </metal:block>
   </metal:content-core>

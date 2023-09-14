@@ -8,7 +8,7 @@
 
   <browser:page
     name="project-activity-view"
-    for="Project Activity"
+    for="sinar.activity.content.project_activity.IProjectActivity"
     class=".project_activity_view.ProjectActivityView"
     template="project_activity_view.pt"
     permission="zope2.View"

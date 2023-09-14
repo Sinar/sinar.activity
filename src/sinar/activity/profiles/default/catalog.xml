@@ -8,4 +8,12 @@
     <indexed_attr value="activity_status"/>
   </index>
   <column value="activity_status"/>
+  <index name="activity_start_date" meta_type="DateIndex">
+        <indexed_attr value="activity_start_date"/>
+      </index>
+      <column value="activity_start_date"/>
+  <index name="activity_end_date" meta_type="DateIndex">
+        <indexed_attr value="activity_end_date"/>
+      </index>
+      <column value="activity_end_date"/>
 </object>
