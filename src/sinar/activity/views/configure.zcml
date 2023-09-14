@@ -7,6 +7,15 @@
   -*- extra stuff goes here -*-
 
   <browser:page
+    name="project-activity-view"
+    for="Project Activity"
+    class=".project_activity_view.ProjectActivityView"
+    template="project_activity_view.pt"
+    permission="zope2.View"
+    layer="sinar.activity.interfaces.ISinarActivityLayer"
+    />
+
+  <browser:page
     name="activity-view"
     for="Products.CMFCore.interfaces.IFolderish"
     class=".activity_view.ActivityView"
