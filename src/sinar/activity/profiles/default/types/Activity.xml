@@ -24,6 +24,7 @@
     <element value="Document" />
     <element value="File" />
     <element value="Image" />
+    <element value="Resource" />
   </property>
   <!-- Schema, class and security -->
   <property name="add_permission">sinar.activity.AddActivity</property>
