@@ -50,6 +50,11 @@
 
     <include package=".behaviors" />
 
+    <adapter factory=".content.activity.startIndexer" name="activity_start_date" />
+    <adapter factory=".content.activity.endIndexer" name="activity_end_date" />
+
+
+
 
   <include package=".views" />
 
