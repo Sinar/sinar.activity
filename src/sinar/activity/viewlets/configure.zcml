@@ -1,0 +1,20 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="sinar.activity">
+
+ <!-- -*- extra stuff goes here -*- -->
+
+  <browser:viewlet
+     name="activity-output-viewlet"
+     for="plone.app.contenttypes.interfaces.IDocument"
+     manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+     layer="sinar.activity.interfaces.ISinarActivityLayer"
+     class=".activity_output_viewlet.ActivityOutputViewlet"
+     template="activity-output-viewlet.pt"
+     permission="zope2.View"
+     />
+
+
+</configure>
