@@ -8,13 +8,14 @@
 
   <browser:viewlet
      name="activity-output-viewlet"
-     for="plone.app.contenttypes.interfaces.IDocument"
-     manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+     for="sinar.resource.content.resource.IResource"
+     manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
      layer="sinar.activity.interfaces.ISinarActivityLayer"
      class=".activity_output_viewlet.ActivityOutputViewlet"
      template="activity-output-viewlet.pt"
      permission="zope2.View"
      />
+
 
 
 </configure>

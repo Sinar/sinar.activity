@@ -1,15 +1,16 @@
 # -*- coding: utf-8 -*-
 
+from plone import api
+from collective.relationhelpers import api
 from plone.app.layout.viewlets import ViewletBase
 
 
 class ActivityOutputViewlet(ViewletBase):
 
-    def update(self):
-        self.message = self.get_message()
+    def activities(self):
 
-    def get_message(self):
-        return u'My message'
+        return api.relations(self.context,
+                             attribute="output_of")
 
     def index(self):
         return super(ActivityOutputViewlet, self).render()

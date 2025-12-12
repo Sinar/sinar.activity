@@ -1,3 +1,24 @@
-<div class="days_to_conf">
-    ${view/message}
+<div class="activities" tal:condition="view/activities">
+
+        <hr />
+
+        <h6>Output of</h6>
+
+        <div class="row row-cols-1 row-cols-md-6 g-4">
+          <div class="col" tal:repeat="item view/activities">
+            <div class="card h-100 bg-light" >
+               <a tal:attributes="href item/absolute_url"
+                  class="stretched-link">
+               <img tal:condition="item/image"
+                    tal:attributes="src string: ${item/absolute_url}/@@images/image/thumb"
+                    src="..." class="card-img-top rounded-top" />
+               </a>
+                <div class="card-body">
+                  <span class="card-subtitle small fw-semi-medium"
+                      tal:content="item/title|nothing">Card title</span>
+                </div>
+            </div>
+          </div>
+        </div>
+
 </div>
