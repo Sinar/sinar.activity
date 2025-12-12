@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 # from sinar.activity import _
+from plone import api
+from collective.relationhelpers import api
 from plone.dexterity.browser.view import DefaultView
 from zope.interface import implementer
 from zope.interface import Interface
@@ -19,6 +21,46 @@ class ProjectActivityView(DefaultView):
     # If you want to define a template here, please remove the template from
     # the configure.zcml registration of this view.
     # template = ViewPageTemplateFile('project_activity_view.pt')
+
+    update_types = ["pressstatement", "newsmedia", "updates"]
+
+    def __call__(self):
+        # Implement your own actions:
+        return super(ProjectActivityView, self).__call__()
+
+    def related_items(self, portal_type, relation):
+        """Get related content"""
+        items = []
+        for item in api.backrelations(self.context, attribute=relation):
+            if item is not None and item.portal_type == portal_type:
+                items.append(item)
+        return items
+
+    def updates(self):
+
+        items = []
+
+        items = self.related_items("Resource", "output_of")
+
+        updates = [item for item in items if item.resource_type in
+                   self.update_types]
+
+        sorted_items = sorted(updates, key=lambda obj: obj.effective(),
+                              reverse=True)
+
+        return sorted_items
+
+    def resources(self):
+        items = self.related_items("Resource", "output_of")
+
+        filtered_items = [item for item in items if item.resource_type not in
+                          self.update_types]
+
+        sorted_items = sorted(filtered_items, key=lambda obj: obj.effective(),
+                              reverse=True)
+
+        return sorted_items
+
 
     def activity_status_title(self):
 
@@ -46,6 +88,4 @@ class ProjectActivityView(DefaultView):
 
             return types
 
-    def __call__(self):
-        # Implement your own actions:
-        return super(ProjectActivityView, self).__call__()
+

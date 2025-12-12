@@ -41,6 +41,69 @@
     <h2>Project Activity Details</h2>
     <div tal:replace="structure context/text/output | nothing" />
 
+    <div class="container" id="updates-title" tal:condition="view/updates">
+                <h5>Updates</h5>
+            </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col" tal:repeat="item view/updates">
+        <div class="card h-100" >
+           <img tal:condition="item/image"
+                tal:attributes="src string: ${item/absolute_url}/@@images/image/large"
+                src="..." class="card-img-top rounded-top" />
+            <div class="card-body">
+              <h5 class="card-title" tal:content="item/title|nothing">Card title</h5>
+            </div>
+            <div class="card-footer">
+                <a href="" tal:attributes="href item/absolute_url"
+                   class="">Read More</a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div tal:condition="view/resources" class="container"
+             id="resources-title">
+                    <h5>Resources</h5>
+    </div>
+
+
+     <div class="card mb-3" style="max-width: 1000px;" tal:repeat="item view/resources">
+        <div class="row g-0">
+            <div class="col-md-3">
+
+              <a href="" tal:attributes="href item/absolute_url">
+              <img tal:condition="item/image"
+                   tal:attributes="src string:
+                   ${item/absolute_url}/@@images/image/mini"
+                src="..." class="img-fluid rounded-start" />
+              </a>
+                
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <strong class="card-title" tal:content="item/title">Card
+                    title</strong>
+                <br />
+                <small class="text-body-secondary"
+                    tal:content="python:item.effective().strftime('%d %B %Y')">
+                    Published on 
+                </small>
+                <small class="card-text"
+                    tal:content="item/description">This is a wider card
+                       with supporting text below as a natural lead-in
+                       to additional content. This content is a little
+                       bit longer.</small>
+                            <a href="" tal:attributes="href item/absolute_url"
+                               class="">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div> 
+
+
+
+
   </metal:block>
   </metal:content-core>
 </body>

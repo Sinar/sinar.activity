@@ -16,6 +16,28 @@
     <tal:eventsummary replace="structure context/@@event_summary"/>
     <div tal:content="structure context/text/output | nothing"></div>
 
+
+    <div class="container" id="updates-title" tal:condition="view/updates">
+                <h5>Updates</h5>
+            </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col" tal:repeat="item view/updates">
+        <div class="card h-100" >
+           <img tal:condition="item/image"
+                tal:attributes="src string: ${item/absolute_url}/@@images/image/large"
+                src="..." class="card-img-top rounded-top" />
+            <div class="card-body">
+              <h5 class="card-title" tal:content="item/title|nothing">Card title</h5>
+            </div>
+            <div class="card-footer">
+                <a href="" tal:attributes="href item/absolute_url"
+                   class="">Read More</a>
+            </div>
+        </div>
+      </div>
+    </div>
+
   </metal:block>
 </body>
 </html>
