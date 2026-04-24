@@ -2,11 +2,9 @@
 
 # from sinar.activity import _
 from plone import api
-from collective.relationhelpers import api
 from plone.dexterity.browser.view import DefaultView
-from zope.interface import implementer
-from zope.interface import Interface
 from zope.component import getUtility
+from zope.interface import implementer, Interface
 from zope.schema.interfaces import IVocabularyFactory
 
 
@@ -61,7 +59,6 @@ class ProjectActivityView(DefaultView):
 
         return sorted_items
 
-
     def activity_status_title(self):
 
         factory = getUtility(IVocabularyFactory,
@@ -87,5 +84,3 @@ class ProjectActivityView(DefaultView):
                 types.append(vocabulary.getTerm(title).title)
 
             return types
-
-

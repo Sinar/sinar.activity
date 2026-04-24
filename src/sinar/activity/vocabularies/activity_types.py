@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 
 # from plone import api
-from sinar.activity import _
 from plone.dexterity.interfaces import IDexterityContent
+from sinar.activity import _
 from zope.globalrequest import getRequest
 from zope.interface import implementer
 from zope.schema.interfaces import IVocabularyFactory
-from zope.schema.vocabulary import SimpleTerm
-from zope.schema.vocabulary import SimpleVocabulary
+from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
 
 
 class VocabItem(object):
@@ -27,10 +26,10 @@ class ActivityTypes(object):
         items = [
             VocabItem('advocacy', _('Advocacy')),
             VocabItem('capacity_building',
-                    _('Capacity building and awareness raising ')),
+                      _('Capacity building and awareness raising ')),
             VocabItem('comms', _('Communications and campaigns')),
             VocabItem('crisis_suppport',
-                    _('Crisis support and legal defense')),
+                      _('Crisis support and legal defense')),
             VocabItem('monitoring', _('Monitoring and documentation')),
             VocabItem('research', _('Research and knowledge generation')),
             VocabItem('mobilisation', _('Resource mobilisation')),

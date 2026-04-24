@@ -1,16 +1,12 @@
 # -*- coding: utf-8 -*-
+from plone import api
+from plone.app.testing import setRoles, TEST_USER_ID
+from plone.dexterity.interfaces import IDexterityFTI
 from sinar.activity.content.project_activity import IProjectActivity  # NOQA E501
 from sinar.activity.testing import SINAR_ACTIVITY_INTEGRATION_TESTING  # noqa
-from plone import api
-from plone.app.testing import setRoles
-from plone.app.testing import TEST_USER_ID
-from plone.dexterity.interfaces import IDexterityFTI
-from zope.component import createObject
-from zope.component import queryUtility
+from zope.component import createObject, queryUtility
 
 import unittest
-
-
 
 
 class ProjectActivityIntegrationTest(unittest.TestCase):

@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
 # from plone.app.textfield import RichText
 # from plone.autoform import directives
+from DateTime import DateTime
 from plone.dexterity.content import Container
+from plone.indexer import indexer
 # from plone.namedfile import field as namedfile
 from plone.supermodel import model
+
 # from plone.supermodel.directives import fieldset
 # from z3c.form.browser.radio import RadioFieldWidget
 # from zope import schema
 from zope.interface import implementer
-from zope.component import adapter
-from Products.ZCatalog.interfaces import IZCatalog
-from DateTime import DateTime
-from plone.indexer import indexer
 
 
 # from sinar.activity import _

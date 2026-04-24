@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from plone import api
-from collective.relationhelpers import api
 from plone.dexterity.browser.view import DefaultView
-from sinar.activity import _
 from zope.component import getUtility
 from zope.schema.interfaces import IVocabularyFactory
 
@@ -25,7 +23,6 @@ class ActivityView(DefaultView):
             if item is not None and item.portal_type == portal_type:
                 items.append(item)
         return items
-
 
     def resources(self):
         items = self.related_items("Resource", "output_of")

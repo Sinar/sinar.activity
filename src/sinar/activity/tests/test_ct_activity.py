@@ -80,7 +80,7 @@ class ActivityIntegrationTest(unittest.TestCase):
             self.portal,
             'activity_id',
             title='Activity container',
-         )
+        )
         self.parent = self.portal[parent_id]
         with self.assertRaises(InvalidParameterError):
             api.content.create(

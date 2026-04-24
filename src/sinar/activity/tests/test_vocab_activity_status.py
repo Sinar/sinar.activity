@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
+from plone.app.testing import setRoles, TEST_USER_ID
 from sinar.activity import _
 from sinar.activity.testing import SINAR_ACTIVITY_INTEGRATION_TESTING  # noqa
-from plone.app.testing import setRoles
-from plone.app.testing import TEST_USER_ID
 from zope.component import getUtility
-from zope.schema.interfaces import IVocabularyFactory
-from zope.schema.interfaces import IVocabularyTokenized
+from zope.schema.interfaces import IVocabularyFactory, IVocabularyTokenized
 
 import unittest
 

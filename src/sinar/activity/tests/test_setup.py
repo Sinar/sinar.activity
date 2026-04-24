@@ -33,9 +33,8 @@ class TestSetup(unittest.TestCase):
 
     def test_browserlayer(self):
         """Test that ISinarActivityLayer is registered."""
-        from sinar.activity.interfaces import (
-            ISinarActivityLayer)
         from plone.browserlayer import utils
+        from sinar.activity.interfaces import ISinarActivityLayer
         self.assertIn(
             ISinarActivityLayer,
             utils.registered_layers())
@@ -63,9 +62,8 @@ class TestUninstall(unittest.TestCase):
 
     def test_browserlayer_removed(self):
         """Test that ISinarActivityLayer is removed."""
-        from sinar.activity.interfaces import \
-            ISinarActivityLayer
         from plone.browserlayer import utils
+        from sinar.activity.interfaces import ISinarActivityLayer
         self.assertNotIn(
             ISinarActivityLayer,
             utils.registered_layers())

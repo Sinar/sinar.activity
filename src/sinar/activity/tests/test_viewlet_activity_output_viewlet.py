@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
-from sinar.activity.interfaces import ISinarActivityLayer
-from sinar.activity.testing import SINAR_ACTIVITY_FUNCTIONAL_TESTING
-from sinar.activity.testing import SINAR_ACTIVITY_INTEGRATION_TESTING
 from plone import api
-from plone.app.testing import setRoles
-from plone.app.testing import TEST_USER_ID
+from plone.app.testing import setRoles, TEST_USER_ID
 from Products.Five.browser import BrowserView
+from sinar.activity.interfaces import ISinarActivityLayer
+from sinar.activity.testing import (
+    SINAR_ACTIVITY_FUNCTIONAL_TESTING,
+    SINAR_ACTIVITY_INTEGRATION_TESTING,
+)
 from zope.component import queryMultiAdapter
 from zope.interface import alsoProvides
 from zope.viewlet.interfaces import IViewletManager

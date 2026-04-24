@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
-from sinar.activity.testing import SINAR_ACTIVITY_FUNCTIONAL_TESTING
-from sinar.activity.testing import SINAR_ACTIVITY_INTEGRATION_TESTING
-from sinar.activity.views.project_activity_view import IProjectActivityView
 from plone import api
-from plone.app.testing import setRoles
-from plone.app.testing import TEST_USER_ID
+from plone.app.testing import setRoles, TEST_USER_ID
+from sinar.activity.testing import (
+    SINAR_ACTIVITY_FUNCTIONAL_TESTING,
+    SINAR_ACTIVITY_INTEGRATION_TESTING,
+)
+from sinar.activity.views.project_activity_view import IProjectActivityView
 from zope.component import getMultiAdapter
 from zope.interface.interfaces import ComponentLookupError
 
