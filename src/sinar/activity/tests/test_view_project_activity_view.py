@@ -19,12 +19,14 @@ class ViewsIntegrationTest(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        api.content.create(self.portal, 'Folder', 'other-folder')
         api.content.create(self.portal, 'Document', 'front-page')
 
     def test_project_activity_view_is_registered(self):
+        self.project_activity = api.content.create(
+            self.portal, 'ProjectActivity', 'project-activity'
+        )
         view = getMultiAdapter(
-            (self.portal['other-folder'], self.portal.REQUEST),
+            (self.project_activity, self.portal.REQUEST),
             name='project-activity-view'
         )
         self.assertTrue(IProjectActivityView.providedBy(view))

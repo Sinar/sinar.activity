@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from plone import api
-from plone.api.exc import InvalidParameterError
 from plone.app.testing import setRoles, TEST_USER_ID
 from plone.dexterity.interfaces import IDexterityFTI
 from sinar.activity.content.activity import IActivity  # NOQA E501
@@ -82,9 +81,12 @@ class ActivityIntegrationTest(unittest.TestCase):
             title='Activity container',
         )
         self.parent = self.portal[parent_id]
-        with self.assertRaises(InvalidParameterError):
-            api.content.create(
-                container=self.parent,
-                type='Document',
-                title='My Content',
-            )
+        obj = api.content.create(
+            container=self.parent,
+            type='Document',
+            title='My Content',
+        )
+        self.assertTrue(
+            obj,
+            u'Cannot add {0} to {1} container!'.format(obj.id, fti.id)
+        )

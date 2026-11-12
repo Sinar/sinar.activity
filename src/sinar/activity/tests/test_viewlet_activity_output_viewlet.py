@@ -7,6 +7,7 @@ from sinar.activity.testing import (
     SINAR_ACTIVITY_FUNCTIONAL_TESTING,
     SINAR_ACTIVITY_INTEGRATION_TESTING,
 )
+from sinar.resource.content.resource import IResource
 from zope.component import queryMultiAdapter
 from zope.interface import alsoProvides
 from zope.viewlet.interfaces import IViewletManager
@@ -27,11 +28,14 @@ class ViewletIntegrationTest(unittest.TestCase):
         api.content.create(self.portal, 'News Item', 'newsitem')
 
     def test_activity_output_viewlet_is_registered(self):
-        view = BrowserView(self.portal['other-document'], self.request)
-        manager_name = 'plone.abovecontenttitle'
+        document = self.portal['other-document']
+        # The viewlet is registered for Resource content
+        alsoProvides(document, IResource)
+        view = BrowserView(document, self.request)
+        manager_name = 'plone.belowcontentbody'
         alsoProvides(self.request, ISinarActivityLayer)
         manager = queryMultiAdapter(
-            (self.portal['other-document'], self.request, view),
+            (document, self.request, view),
             IViewletManager,
             manager_name,
             default=None
